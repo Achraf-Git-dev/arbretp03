@@ -1,11 +1,13 @@
 #include "arbre.h"
 
+// Fonction qui prend en argument l'expression algebrique d'une arbre ou forêt pour construire un dictionnaire
+
 arbre_t* ConstructionArbre(char* notation)
 {
     arbre_t* arbre = NULL;
     pile_t* ptr_pile = InitialiserPile();
-    arbre_t** prec = &arbre;
-    bool code = true;
+    arbre_t** prec = &arbre; // on declare un pointeur pour nous aider à parcourir l'arbre
+    bool code = true; // un booleen pour nous aider à sarvoir quand il faut empiler lorsque qu'on a plusieurs * suivies
     int i = 0;
 
     while (notation[i] != '\0')
